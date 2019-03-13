@@ -1,0 +1,35 @@
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.AddStudent.resources
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.EditStudent.resources
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+D:\Khadija Zahoor Hashmi\BSc CS 16\6th semester\DBMS\Lab\Project\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.AddStudent.resources
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.EditStudent.resources
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.ViewStudent.resources
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+C:\Users\Javeria Riaz\Desktop\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.AddStudent.resources
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.ViewStudent.resources
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Javeria Riaz\Desktop\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.Main.resources
