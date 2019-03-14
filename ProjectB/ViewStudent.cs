@@ -16,7 +16,6 @@ namespace ProjectB
         public ViewStudent()
         {
             InitializeComponent();
-            DataConnection.get_instance().connectionstring = "Data Source=HAIER-PC\\SQLEXPRESS;Initial Catalog=ProjectB;Integrated Security=True";
            
            
         }
@@ -24,8 +23,7 @@ namespace ProjectB
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            var con = DataConnection.get_instance().Getconnection();
-            con.Open();
+           
             if (e.ColumnIndex == 0)
             {
                 DataGridViewRow selected = viewstudents.Rows[e.RowIndex];
@@ -46,14 +44,12 @@ namespace ProjectB
                 this.Hide();
                 frm.Show();
             }
-            con.Close();
+           
 
         }
 
         private void ViewStudent_Load(object sender, EventArgs e)
         {
-            var con = DataConnection.get_instance().Getconnection();
-            con.Open();
             SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Student"));
             List<Student> students = new List<Student>();
             while (data.Read())
@@ -72,7 +68,7 @@ namespace ProjectB
             BindingSource S = new BindingSource();
             S.DataSource = students;
             viewstudents.DataSource = S;
-            con.Close();
+           
 
         }
 

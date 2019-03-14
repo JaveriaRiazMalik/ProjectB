@@ -17,10 +17,6 @@ namespace ProjectB
         public AddStudent()
         {
             InitializeComponent();
-            DataConnection.get_instance().connectionstring = "Data Source=HAIER-PC\\SQLEXPRESS;Initial Catalog=ProjectB;Integrated Security=True";
-           
-               
-
         }
         public AddStudent(string passed_id)
         {
@@ -56,8 +52,6 @@ namespace ProjectB
 
         private void btnRegisterS_Click_1(object sender, EventArgs e)
         {
-            var con = DataConnection.get_instance().Getconnection();
-            con.Open();
 
             SqlDataReader dataS = DataConnection.get_instance().Getdata("SELECT * FROM Student");
             List<Student> stdlist = new List<Student>();
@@ -184,7 +178,7 @@ namespace ProjectB
                 this.Hide();
                 ViewStudent vs = new ViewStudent();
                 vs.Show();
-                con.Close();
+               
 
             }
         }
@@ -224,6 +218,39 @@ namespace ProjectB
             ViewStudent frm = new ViewStudent();
             this.Hide();
             frm.Show();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ViewCLOS c = new ViewCLOS();
+            this.Hide();
+            c.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ViewRubric r = new ViewRubric();
+            this.Hide();
+            r.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ViewLevel l = new ViewLevel();
+            this.Hide();
+            l.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Main m = new Main();
+            this.Hide();
+            m.Show();
         }
     }
 }
