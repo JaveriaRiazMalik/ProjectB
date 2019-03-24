@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjectB
 {
+    /// <summary>
+    /// Data retreived from Clo table from database
+    /// </summary>
     class CLO
     {
-        private int id;
+        private int id; //primary key
         private string name;
         private DateTime DateCreated;
         private DateTime DateUpdated;

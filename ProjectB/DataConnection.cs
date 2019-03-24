@@ -19,6 +19,10 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// creates a data connection instance
+        /// </summary>
+        /// <returns>data connection </returns>
         public static DataConnection get_instance()
         {
             if (instance == null)
@@ -28,7 +32,10 @@ namespace ProjectB
             return instance;
         }
 
-
+        /// <summary>
+        /// sets up data connection
+        /// </summary>
+        /// <returns>connection</returns>
         public SqlConnection Getconnection()
         {
             connection = new SqlConnection(connectionstring);
@@ -39,6 +46,9 @@ namespace ProjectB
             return connection;
         }
 
+        /// <summary>
+        /// Closes the connection
+        /// </summary>
         public void close()
         {
             if (connection != null)
@@ -47,6 +57,11 @@ namespace ProjectB
             }
         }
 
+        /// <summary>
+        /// reads the data
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>complete table</returns>
         public SqlDataReader Getdata(string query)
         {
             connection = Getconnection();
@@ -56,6 +71,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// executes the query
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>gives the row after applying query </returns>
         public int Executequery(string query)
         {
             connection = Getconnection();
@@ -64,6 +84,9 @@ namespace ProjectB
             return row;
         }
         
+        /// <summary>
+        /// closes the connection
+        /// </summary>
         public void Closeconnection()
         {
             if (connection != null)

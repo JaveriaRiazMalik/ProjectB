@@ -15,7 +15,7 @@ namespace ProjectB
         public Main()
         {
             InitializeComponent();
-            DataConnection.get_instance().connectionstring = "Data Source=HAIER-PC;Initial Catalog=ProjectB;Integrated Security=True";
+            DataConnection.get_instance().connectionstring = "Data Source=DESKTOP-RB72FPN\\SQLEXPRESS;Initial Catalog=ProjectB;Integrated Security=True";
            
             try
             {
@@ -33,10 +33,15 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// Shows student list form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMStudent_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddStudent ad = new AddStudent();
+            ViewStudent ad = new ViewStudent();
             ad.Show();
         }
 
@@ -45,10 +50,15 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// Shows clo list form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btmMAttendance_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddCLO c = new AddCLO();
+            ViewCLOS c = new ViewCLOS();
             c.Show();
         }
 
@@ -70,6 +80,23 @@ namespace ProjectB
         private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Shows rubric list form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnMLabs_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewRubric r = new ViewRubric();
+            r.Show();
         }
     }
 }

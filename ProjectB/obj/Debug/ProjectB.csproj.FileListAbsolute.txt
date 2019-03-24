@@ -93,3 +93,21 @@ D:\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.Gener
 D:\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
 D:\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.exe
 D:\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.AddCLO.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.AddLevel.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.AddRubric.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.AddStudent.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.Main.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.ViewCLOS.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.ViewLevel.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.ViewRubric.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.ViewStudent.resources
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.pdb

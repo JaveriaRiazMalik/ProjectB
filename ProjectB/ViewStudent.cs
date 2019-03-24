@@ -20,10 +20,15 @@ namespace ProjectB
            
         }
 
+        /// <summary>
+        /// data grid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           
+           //edit button
             if (e.ColumnIndex == 0)
             {
                 DataGridViewRow selected = viewstudents.Rows[e.RowIndex];
@@ -32,24 +37,33 @@ namespace ProjectB
                 this.Hide();
                 frm.Show();
             }
+            //delete button
             if (e.ColumnIndex == 1)
             {
                 DataGridViewRow selected = viewstudents.Rows[e.RowIndex];
                 string id = selected.Cells[2].Value.ToString();
                 MessageBox.Show("Are you sure you want to delete?");
+
+                //deletes data from Student
                 string cmd = string.Format("DELETE FROM Student WHERE Id='{0}'", id);
-                int rows = DataConnection.get_instance().Executequery(cmd);
-                MessageBox.Show(String.Format("{0} rows affected", rows));
+               DataConnection.get_instance().Executequery(cmd);
+               
                 ViewStudent frm = new ViewStudent();
                 this.Hide();
                 frm.Show();
             }
+            
            
 
         }
-
+        /// <summary>
+        /// form load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ViewStudent_Load(object sender, EventArgs e)
         {
+            //reads data from Student
             SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Student"));
             List<Student> students = new List<Student>();
             while (data.Read())
@@ -62,7 +76,16 @@ namespace ProjectB
                 std.Email = data.GetString(4);
                 std.RegistrationNo = data.GetString(5);
                 std.Status = Convert.ToInt32(data.GetValue(6));
-            
+                if(std.Status == 5)
+                {
+                    std.Statusid = "Active";
+                }
+                else
+                {
+                    std.Statusid = "InActive";
+                }
+                
+
                 students.Add(std);
             }
             BindingSource S = new BindingSource();
@@ -72,6 +95,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// showing main screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegisterS_Click(object sender, EventArgs e)
         {
             Main frm = new Main();
@@ -83,5 +111,32 @@ namespace ProjectB
         {
 
         }
+
+        /// <summary>
+        /// showing add student form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            AddStudent s = new AddStudent();
+            this.Hide();
+            s.Show();
+        }
+
+        /// <summary>
+        /// showing add clo form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddCLO s = new AddCLO();
+            this.Hide();
+            s.Show();
+
+        }
+
+        
     }
 }
