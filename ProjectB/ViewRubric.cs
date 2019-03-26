@@ -52,6 +52,12 @@ namespace ProjectB
                 BindingSource S = new BindingSource();
                 S.DataSource = rlist;
                 View.DataSource = S;
+
+                View.Columns["Edit"].DisplayIndex = View.ColumnCount - 1;
+                View.Columns["Delete"].DisplayIndex = View.ColumnCount - 1;
+                View.Columns["AddLevel"].DisplayIndex = View.ColumnCount - 1;
+                View.Columns["ViewRelatedLevels"].DisplayIndex = View.ColumnCount - 1;
+
             }
             if(idclo!=null)
             {
@@ -70,6 +76,11 @@ namespace ProjectB
                 BindingSource S = new BindingSource();
                 S.DataSource = rlist;
                 View.DataSource = S;
+
+                View.Columns["Edit"].DisplayIndex = View.ColumnCount - 1;
+                View.Columns["Delete"].DisplayIndex = View.ColumnCount - 1;
+                View.Columns["AddLevel"].DisplayIndex = View.ColumnCount - 1;
+                View.Columns["ViewRelatedLevels"].DisplayIndex = View.ColumnCount - 1;
             }
         }
 

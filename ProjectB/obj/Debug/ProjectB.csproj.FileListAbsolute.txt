@@ -111,3 +111,23 @@ D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\Project
 D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
 D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.exe
 D:\Javeria Files\DBMS Project Mids\DBproject\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.AddCLO.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.AddLevel.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.AddRubric.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.AddStudent.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.Main.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.MarkAttendance.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ViewCLOS.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ViewLevel.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ViewRubric.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ViewStudent.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ViewAttendance.resources

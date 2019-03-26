@@ -41,6 +41,11 @@ namespace ProjectB
             BindingSource S = new BindingSource();
             S.DataSource = clos;
             viewclo.DataSource = S;
+
+            viewclo.Columns["Edit"].DisplayIndex = viewclo.ColumnCount - 1;
+            viewclo.Columns["Delete"].DisplayIndex = viewclo.ColumnCount - 1;
+            viewclo.Columns["AddRubric"].DisplayIndex = viewclo.ColumnCount - 1;
+            viewclo.Columns["ViewRelatedRubrics"].DisplayIndex = viewclo.ColumnCount - 1;
         }
 
         /// <summary>
@@ -64,49 +69,44 @@ namespace ProjectB
             {
                
                 DataGridViewRow selected = viewclo.Rows[e.RowIndex];
-                string id = selected.Cells[4].Value.ToString();
+                int id = Convert.ToInt32(selected.Cells[4].Value);
                 MessageBox.Show("Are you sure you want to delete?");
-
+                int ru;
                 //reading data from Rubric table
-                SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Rubric WHERE Cloid={0}",id));
+                SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Rubric WHERE CloId={0}",id));
                 if (data != null)
                 {
                     while (data.Read())
                     {
-                        int ru;
-                        ru = Convert.ToInt32(data.GetValue(2));
-                        if (ru.ToString() == id)
-                        {
+                        
+                        ru = Convert.ToInt32(data.GetValue(0));
+                       
                             //reading data from Rubric Levels table
-                            SqlDataReader dataR = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM RubricLevel WHERE Rubricid={0}",ru));
+                            SqlDataReader dataR = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM RubricLevel WHERE RubricId={0}",ru));
                             if (dataR != null)
                             {
-                                while (data.Read())
+                                while (dataR.Read())
                                 {
-                                    int r;
-                                    r = Convert.ToInt32(dataR.GetValue(1));
-                                    if (r.ToString() == ru.ToString())
-                                    {
-                                        //deleting data from Rubric Level
-                                        string cmd2 = string.Format("DELETE FROM RubricLevel WHERE RubricId='{0}'", r);
+                                   
+                                    //deleting data from Rubric Level
+                                        string cmd2 = string.Format("DELETE FROM RubricLevel WHERE RubricId='{0}'", ru);
                                        DataConnection.get_instance().Executequery(cmd2);
-                                      
-                                        MessageBox.Show("Related Rubric Level(s) Deleted");
+                                       MessageBox.Show("Related Rubric Level(s) Deleted");
 
-                                    }
+                                    
                                 }
                             }
 
                             //deleting data from Rubric
-                            string cmd1 = string.Format("DELETE FROM Rubric WHERE Cloid='{0}'", id);
+                            string cmd1 = string.Format("DELETE FROM Rubric WHERE Id='{0}'", ru);
                             DataConnection.get_instance().Executequery(cmd1);
                             MessageBox.Show("Related Rubric(s) Deleted");
-                        }
+                        
                     }
                 }
 
                 //deleting data from Clo
-                string cmd = string.Format("DELETE FROM Clo WHERE Id='{0}'", id);
+                string cmd = string.Format("DELETE FROM Clo WHERE Id='{0}'",id);
                 DataConnection.get_instance().Executequery(cmd);
                 MessageBox.Show("Clo Deleted");
 
@@ -178,6 +178,9 @@ namespace ProjectB
             s.Show();
         }
 
-        
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -48,67 +48,74 @@ namespace ProjectB
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //reading data from the Rubric Level table from database
-            SqlDataReader data = DataConnection.get_instance().Getdata("SELECT * FROM RubricLevel");
-            List<RubricLevel> rlist = new List<RubricLevel>();
-            while (data.Read())
+            try
             {
-                RubricLevel rl = new RubricLevel();
-                rl.RubricId1 = Convert.ToInt32(idr);
-                rl.Details = txtdetails.Text;
-                rl.Mlevel1 = Convert.ToInt32(txtm.Text);
-                
-                rlist.Add(rl);
-
-            }
-            RubricLevel rub = new RubricLevel();
-            bool cond = true;
-            if (txtdetails.Text == "" || txtm.Text == "")
-            {
-                //text boxes cannot contain empty spaces
-                MessageBox.Show("Enter all the entries in their respective boxes");
-                cond = false;
-            }
-            else
-            {
-                if (cond == true && idl == null)
+                //reading data from the Rubric Level table from database
+                SqlDataReader data = DataConnection.get_instance().Getdata("SELECT * FROM RubricLevel");
+                List<RubricLevel> rlist = new List<RubricLevel>();
+                while (data.Read())
                 {
+                    RubricLevel rl = new RubricLevel();
+                    rl.RubricId1 = Convert.ToInt32(idr);
+                    rl.Details = txtdetails.Text;
+                    rl.Mlevel1 = Convert.ToInt32(txtm.Text);
 
-                    rub.Details = txtdetails.Text;
-                    rub.Mlevel1 = Convert.ToInt32(txtm.Text);
-                    rub.RubricId1 = Convert.ToInt32(idr);
-
-                    // inserting the rubric levels in the database
-                    string cmd = string.Format("INSERT RubricLevel(RubricId,Details,MeasurementLevel) VALUES('{0}','{1}',{2})", rub.RubricId1, rub.Details,rub.Mlevel1 );
-                   DataConnection.get_instance().Executequery(cmd);
-                   
-                    MessageBox.Show("Rubric Levels Added Successfully");
-                
-                    this.Hide();
-                    ViewLevel vl = new ViewLevel();
-                    vl.Show();
-                    
-                   
+                    rlist.Add(rl);
 
                 }
-                if (cond == true && idl != null)
+                RubricLevel rub = new RubricLevel();
+                bool cond = true;
+                if (txtdetails.Text == "" || txtm.Text == "")
                 {
-
-                    rub.Details = txtdetails.Text;
-                    rub.Id = Convert.ToInt32(idl);
-                    rub.Mlevel1 = Convert.ToInt32(txtm.Text);
-                    rub.RubricId1 = Convert.ToInt32(idr);
-
-
-                    // updating Rubric Levels in the database
-                    string cmd = string.Format("UPDATE RubricLevel SET Details='{0}', MeasurementLevel='{1}' WHERE Id='{2}'", rub.Details,rub.Mlevel1, rub.Id);
-                    DataConnection.get_instance().Executequery(cmd);
-                   
-                    MessageBox.Show("Rubric Level Edited Successfully!");
-                    this.Hide();
-                    ViewLevel vs = new ViewLevel();
-                    vs.Show();
+                    //text boxes cannot contain empty spaces
+                    MessageBox.Show("Enter all the entries in their respective boxes");
+                    cond = false;
                 }
+                else
+                {
+                    if (cond == true && idl == null)
+                    {
+
+                        rub.Details = txtdetails.Text;
+                        rub.Mlevel1 = Convert.ToInt32(txtm.Text);
+                        rub.RubricId1 = Convert.ToInt32(idr);
+
+                        // inserting the rubric levels in the database
+                        string cmd = string.Format("INSERT RubricLevel(RubricId,Details,MeasurementLevel) VALUES('{0}','{1}',{2})", rub.RubricId1, rub.Details, rub.Mlevel1);
+                        DataConnection.get_instance().Executequery(cmd);
+
+                        MessageBox.Show("Rubric Levels Added Successfully");
+
+                        this.Hide();
+                        ViewLevel vl = new ViewLevel();
+                        vl.Show();
+
+
+
+                    }
+                    if (cond == true && idl != null)
+                    {
+
+                        rub.Details = txtdetails.Text;
+                        rub.Id = Convert.ToInt32(idl);
+                        rub.Mlevel1 = Convert.ToInt32(txtm.Text);
+                        rub.RubricId1 = Convert.ToInt32(idr);
+
+
+                        // updating Rubric Levels in the database
+                        string cmd = string.Format("UPDATE RubricLevel SET Details='{0}', MeasurementLevel='{1}' WHERE Id='{2}'", rub.Details, rub.Mlevel1, rub.Id);
+                        DataConnection.get_instance().Executequery(cmd);
+
+                        MessageBox.Show("Rubric Level Edited Successfully!");
+                        this.Hide();
+                        ViewLevel vs = new ViewLevel();
+                        vs.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -204,6 +211,16 @@ namespace ProjectB
         }
 
         private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdetail_TextChanged(object sender, EventArgs e)
         {
 
         }

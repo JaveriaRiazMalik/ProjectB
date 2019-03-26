@@ -53,6 +53,9 @@ namespace ProjectB
                 BindingSource S = new BindingSource();
                 S.DataSource = rlist;
                 view.DataSource = S;
+
+                view.Columns["Edit"].DisplayIndex = view.ColumnCount - 1;
+                view.Columns["Delete"].DisplayIndex = view.ColumnCount - 1;
             }
             if (idrub != null)
             {
@@ -72,6 +75,9 @@ namespace ProjectB
                 BindingSource S = new BindingSource();
                 S.DataSource = rlist;
                 view.DataSource = S;
+
+                view.Columns["Edit"].DisplayIndex = view.ColumnCount - 1;
+                view.Columns["Delete"].DisplayIndex = view.ColumnCount - 1;
             }
         }
 

@@ -44,10 +44,17 @@ namespace ProjectB
                 string id = selected.Cells[2].Value.ToString();
                 MessageBox.Show("Are you sure you want to delete?");
 
+                //deletes from Student Attendance
+                string cmd1 = string.Format("DELETE FROM StudentAttendance WHERE StudentId='{0}'", id);
+                DataConnection.get_instance().Executequery(cmd1);
+
                 //deletes data from Student
                 string cmd = string.Format("DELETE FROM Student WHERE Id='{0}'", id);
                DataConnection.get_instance().Executequery(cmd);
+
                
+
+
                 ViewStudent frm = new ViewStudent();
                 this.Hide();
                 frm.Show();
@@ -91,7 +98,13 @@ namespace ProjectB
             BindingSource S = new BindingSource();
             S.DataSource = students;
             viewstudents.DataSource = S;
+
+            viewstudents.Columns["Edit"].DisplayIndex = viewstudents.ColumnCount - 1;
+            viewstudents.Columns["Delete"].DisplayIndex = viewstudents.ColumnCount - 1;
            
+
+            viewstudents.Columns.RemoveAt(5);
+
 
         }
 

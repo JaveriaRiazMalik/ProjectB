@@ -50,11 +50,12 @@
             // btnView
             // 
             this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.btnView.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnView.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnView.ForeColor = System.Drawing.Color.Transparent;
             this.btnView.Location = new System.Drawing.Point(3, 66);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(208, 48);
+            this.btnView.Size = new System.Drawing.Size(317, 48);
             this.btnView.TabIndex = 2;
             this.btnView.Text = "Students";
             this.btnView.UseVisualStyleBackColor = false;
@@ -63,11 +64,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Verdana", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(116, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(380, 59);
+            this.label1.Size = new System.Drawing.Size(385, 59);
             this.label1.TabIndex = 3;
             this.label1.Text = "Manage Rubric";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -75,11 +77,12 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSave.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
             this.btnSave.Location = new System.Drawing.Point(3, 65);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(153, 48);
+            this.btnSave.Size = new System.Drawing.Size(316, 48);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -88,6 +91,7 @@
             // txtdetails
             // 
             this.txtdetails.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtdetails.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtdetails.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.txtdetails.ForeColor = System.Drawing.Color.Silver;
             this.txtdetails.Location = new System.Drawing.Point(3, 3);
@@ -168,11 +172,12 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button4.ForeColor = System.Drawing.Color.Transparent;
             this.button4.Location = new System.Drawing.Point(3, 318);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(208, 48);
+            this.button4.Size = new System.Drawing.Size(317, 48);
             this.button4.TabIndex = 8;
             this.button4.Text = "Main Screen";
             this.button4.UseVisualStyleBackColor = false;
@@ -181,22 +186,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Verdana", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 42);
+            this.label2.Size = new System.Drawing.Size(317, 42);
             this.label2.TabIndex = 7;
             this.label2.Text = "View";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(3, 129);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 48);
+            this.button1.Size = new System.Drawing.Size(317, 48);
             this.button1.TabIndex = 3;
             this.button1.Text = "CLOs";
             this.button1.UseVisualStyleBackColor = false;
@@ -205,11 +212,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Location = new System.Drawing.Point(3, 192);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(208, 48);
+            this.button2.Size = new System.Drawing.Size(317, 48);
             this.button2.TabIndex = 4;
             this.button2.Text = "Rubrics";
             this.button2.UseVisualStyleBackColor = false;
@@ -218,11 +226,12 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button3.ForeColor = System.Drawing.Color.Transparent;
             this.button3.Location = new System.Drawing.Point(3, 255);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(208, 48);
+            this.button3.Size = new System.Drawing.Size(317, 48);
             this.button3.TabIndex = 5;
             this.button3.Text = "Levels";
             this.button3.UseVisualStyleBackColor = false;

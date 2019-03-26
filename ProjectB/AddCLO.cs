@@ -38,59 +38,66 @@ namespace ProjectB
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //reading the data from the table Clo from database
-            SqlDataReader dataC = DataConnection.get_instance().Getdata("SELECT * FROM Clo");
-            List<CLO> Clo = new List<CLO>();
-            while (dataC.Read())
+            try
             {
-                CLO c = new CLO();
-                c.Id = Convert.ToInt32(dataC.GetValue(0));
-                c.Name = dataC.GetString(1);
-                c.DateCreated1 = dataC.GetDateTime(2);
-                c.DateUpdated1 = dataC.GetDateTime(3);
-                Clo.Add(c);
-
-            }
-            CLO clo = new CLO();
-            bool cond = true;
-            if (txtname.Text == "")
-            {
-                //text boxes cannot contain empty spaces
-                MessageBox.Show("Enter all the entries in their respective boxes");
-                cond = false;
-            }
-            else
-            {
-                if (cond == true && selected_id_clo == null)
+                //reading the data from the table Clo from database
+                SqlDataReader dataC = DataConnection.get_instance().Getdata("SELECT * FROM Clo");
+                List<CLO> Clo = new List<CLO>();
+                while (dataC.Read())
                 {
-                    clo.Name = txtname.Text;
-                    clo.DateCreated1 = DateTime.Now;
-                    clo.DateUpdated1 = DateTime.Now;
-
-                    //inserting the values in Clo in database
-                    string cmd = string.Format("INSERT Clo(Name,DateCreated,DateUpdated) VALUES('{0}','{1}','{2}')", clo.Name, clo.DateCreated1,clo.DateUpdated1);
-                    DataConnection.get_instance().Executequery(cmd);
-                 
-                    MessageBox.Show("Clo Added Successfully");
-                    this.Hide();
-                    ViewCLOS vc = new ViewCLOS();
-                    vc.Show();
+                    CLO c = new CLO();
+                    c.Id = Convert.ToInt32(dataC.GetValue(0));
+                    c.Name = dataC.GetString(1);
+                    c.DateCreated1 = dataC.GetDateTime(2);
+                    c.DateUpdated1 = dataC.GetDateTime(3);
+                    Clo.Add(c);
 
                 }
-                if (cond == true && selected_id_clo != null)
+                CLO clo = new CLO();
+                bool cond = true;
+                if (txtname.Text == "")
                 {
-                    clo.Name = txtname.Text;
-                    clo.DateUpdated1 = DateTime.Now;
-
-                    //updating the values in the Clo table in the database
-                    string cmd = string.Format("UPDATE Clo SET Name='{0}',DateUpdated='{1}' WHERE Id='{2}'", clo.Name,clo.DateUpdated1 ,selected_id_clo);
-                   DataConnection.get_instance().Executequery(cmd);
-                   
-                    MessageBox.Show("Clo Edited Successfully!");
-                    this.Hide();
-                    ViewCLOS vs = new ViewCLOS();
-                    vs.Show();
+                    //text boxes cannot contain empty spaces
+                    MessageBox.Show("Enter all the entries in their respective boxes");
+                    cond = false;
                 }
+                else
+                {
+                    if (cond == true && selected_id_clo == null)
+                    {
+                        clo.Name = txtname.Text;
+                        clo.DateCreated1 = DateTime.Now;
+                        clo.DateUpdated1 = DateTime.Now;
+
+                        //inserting the values in Clo in database
+                        string cmd = string.Format("INSERT Clo(Name,DateCreated,DateUpdated) VALUES('{0}','{1}','{2}')", clo.Name, clo.DateCreated1, clo.DateUpdated1);
+                        DataConnection.get_instance().Executequery(cmd);
+
+                        MessageBox.Show("Clo Added Successfully");
+                        this.Hide();
+                        ViewCLOS vc = new ViewCLOS();
+                        vc.Show();
+
+                    }
+                    if (cond == true && selected_id_clo != null)
+                    {
+                        clo.Name = txtname.Text;
+                        clo.DateUpdated1 = DateTime.Now;
+
+                        //updating the values in the Clo table in the database
+                        string cmd = string.Format("UPDATE Clo SET Name='{0}',DateUpdated='{1}' WHERE Id='{2}'", clo.Name, clo.DateUpdated1, selected_id_clo);
+                        DataConnection.get_instance().Executequery(cmd);
+
+                        MessageBox.Show("Clo Edited Successfully!");
+                        this.Hide();
+                        ViewCLOS vs = new ViewCLOS();
+                        vs.Show();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

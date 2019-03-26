@@ -53,6 +53,7 @@
             this.viewstudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
             this.Delete});
+            this.viewstudents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewstudents.Location = new System.Drawing.Point(3, 3);
             this.viewstudents.Name = "viewstudents";
             this.viewstudents.Size = new System.Drawing.Size(556, 353);
@@ -76,22 +77,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Verdana", 48F);
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(83, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(597, 78);
+            this.label1.Size = new System.Drawing.Size(707, 78);
             this.label1.TabIndex = 3;
             this.label1.Text = "View Student List";
             // 
             // btnRegisterS
             // 
             this.btnRegisterS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.btnRegisterS.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegisterS.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnRegisterS.ForeColor = System.Drawing.Color.Transparent;
             this.btnRegisterS.Location = new System.Drawing.Point(3, 270);
             this.btnRegisterS.Name = "btnRegisterS";
-            this.btnRegisterS.Size = new System.Drawing.Size(201, 48);
+            this.btnRegisterS.Size = new System.Drawing.Size(301, 48);
             this.btnRegisterS.TabIndex = 2;
             this.btnRegisterS.Text = "Main Screen";
             this.btnRegisterS.UseVisualStyleBackColor = false;
@@ -102,7 +105,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.16731F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.83269F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
@@ -151,11 +154,12 @@
             // btnView
             // 
             this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.btnView.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnView.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnView.ForeColor = System.Drawing.Color.Transparent;
             this.btnView.Location = new System.Drawing.Point(3, 92);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(208, 48);
+            this.btnView.Size = new System.Drawing.Size(301, 48);
             this.btnView.TabIndex = 13;
             this.btnView.Text = "Students";
             this.btnView.UseVisualStyleBackColor = false;
@@ -164,22 +168,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Verdana", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 42);
+            this.label2.Size = new System.Drawing.Size(301, 42);
             this.label2.TabIndex = 9;
             this.label2.Text = "Add";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(3, 181);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 48);
+            this.button1.Size = new System.Drawing.Size(301, 48);
             this.button1.TabIndex = 12;
             this.button1.Text = "CLOs";
             this.button1.UseVisualStyleBackColor = false;

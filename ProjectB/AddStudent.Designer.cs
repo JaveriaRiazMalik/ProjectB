@@ -55,22 +55,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Verdana", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(108, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 59);
+            this.label1.Size = new System.Drawing.Size(429, 59);
             this.label1.TabIndex = 3;
             this.label1.Text = "Manage Student";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(3, 64);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(245, 44);
+            this.button1.Size = new System.Drawing.Size(366, 44);
             this.button1.TabIndex = 2;
             this.button1.Text = "Students";
             this.button1.UseVisualStyleBackColor = false;
@@ -136,6 +138,7 @@
             // txtSemail
             // 
             this.txtSemail.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSemail.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSemail.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.txtSemail.ForeColor = System.Drawing.Color.Silver;
             this.txtSemail.Location = new System.Drawing.Point(3, 163);
@@ -148,6 +151,7 @@
             // txtSLname
             // 
             this.txtSLname.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSLname.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSLname.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.txtSLname.ForeColor = System.Drawing.Color.Silver;
             this.txtSLname.Location = new System.Drawing.Point(3, 57);
@@ -160,6 +164,7 @@
             // txtScontact
             // 
             this.txtScontact.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtScontact.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtScontact.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.txtScontact.ForeColor = System.Drawing.Color.Silver;
             this.txtScontact.Location = new System.Drawing.Point(3, 110);
@@ -172,6 +177,7 @@
             // txtSRno
             // 
             this.txtSRno.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSRno.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSRno.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.txtSRno.ForeColor = System.Drawing.Color.Silver;
             this.txtSRno.Location = new System.Drawing.Point(3, 216);
@@ -184,6 +190,7 @@
             // txtSFname
             // 
             this.txtSFname.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSFname.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSFname.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.txtSFname.ForeColor = System.Drawing.Color.Silver;
             this.txtSFname.Location = new System.Drawing.Point(3, 3);
@@ -196,6 +203,7 @@
             // txtSStatus
             // 
             this.txtSStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSStatus.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.txtSStatus.ForeColor = System.Drawing.Color.Silver;
             this.txtSStatus.FormattingEnabled = true;
@@ -211,11 +219,12 @@
             // btnRegisterS
             // 
             this.btnRegisterS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.btnRegisterS.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegisterS.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnRegisterS.ForeColor = System.Drawing.Color.Transparent;
             this.btnRegisterS.Location = new System.Drawing.Point(3, 322);
             this.btnRegisterS.Name = "btnRegisterS";
-            this.btnRegisterS.Size = new System.Drawing.Size(153, 48);
+            this.btnRegisterS.Size = new System.Drawing.Size(267, 48);
             this.btnRegisterS.TabIndex = 2;
             this.btnRegisterS.Text = "Save";
             this.btnRegisterS.UseVisualStyleBackColor = false;
@@ -248,11 +257,12 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button5.ForeColor = System.Drawing.Color.Transparent;
             this.button5.Location = new System.Drawing.Point(3, 314);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(245, 48);
+            this.button5.Size = new System.Drawing.Size(366, 48);
             this.button5.TabIndex = 6;
             this.button5.Text = "Main Screen";
             this.button5.UseVisualStyleBackColor = false;
@@ -261,22 +271,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Verdana", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 42);
+            this.label2.Size = new System.Drawing.Size(366, 42);
             this.label2.TabIndex = 4;
             this.label2.Text = "View";
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button4.ForeColor = System.Drawing.Color.Transparent;
             this.button4.Location = new System.Drawing.Point(3, 252);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(245, 48);
+            this.button4.Size = new System.Drawing.Size(366, 48);
             this.button4.TabIndex = 5;
             this.button4.Text = "Levels";
             this.button4.UseVisualStyleBackColor = false;
@@ -285,11 +297,12 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button3.ForeColor = System.Drawing.Color.Transparent;
             this.button3.Location = new System.Drawing.Point(3, 190);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(245, 48);
+            this.button3.Size = new System.Drawing.Size(366, 48);
             this.button3.TabIndex = 4;
             this.button3.Text = "Rubrics";
             this.button3.UseVisualStyleBackColor = false;
@@ -298,11 +311,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Location = new System.Drawing.Point(3, 128);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(245, 48);
+            this.button2.Size = new System.Drawing.Size(366, 48);
             this.button2.TabIndex = 3;
             this.button2.Text = "CLOs";
             this.button2.UseVisualStyleBackColor = false;

@@ -76,61 +76,69 @@ namespace ProjectB
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //reading data from the Rubric table from database
-            SqlDataReader data = DataConnection.get_instance().Getdata("SELECT * FROM Rubric");
-            List<Rubric> rlist = new List<Rubric>();
-            while (data.Read())
+            try
             {
-                Rubric ru = new Rubric();
-                ru.Id = Convert.ToInt32(data.GetValue(0));
-                ru.Details = data.GetString(1);
-                ru.Cloid = Convert.ToInt32(data.GetValue(2));
-               
-                rlist.Add(ru);
 
-            }
-            Rubric rub = new Rubric();
-            bool cond = true;
-            if (txtdetails.Text == "")
-            {
-                //text boxes cannot contain empty spaces
-                MessageBox.Show("Enter all the entries in their respective boxes");
-                cond = false;
-            }
-            else
-            {
-                if (cond == true && selected_id == null)
+                //reading data from the Rubric table from database
+                SqlDataReader data = DataConnection.get_instance().Getdata("SELECT * FROM Rubric");
+                List<Rubric> rlist = new List<Rubric>();
+                while (data.Read())
                 {
+                    Rubric ru = new Rubric();
+                    ru.Id = Convert.ToInt32(data.GetValue(0));
+                    ru.Details = data.GetString(1);
+                    ru.Cloid = Convert.ToInt32(data.GetValue(2));
 
-                    rub.Details = txtdetails.Text;
-                    rub.Cloid = Convert.ToInt32(selected_id_clo);
-
-                    // inserting the rubrics in the database
-                    string cmd = string.Format("INSERT Rubric(Details,Cloid) VALUES('{0}','{1}')", rub.Details, rub.Cloid);
-                    DataConnection.get_instance().Executequery(cmd);
-                   
-                    MessageBox.Show("Rubric Added Successfully");
-                    this.Hide();
-                    ViewRubric vc = new ViewRubric();
-                    vc.Show();
+                    rlist.Add(ru);
 
                 }
-                if (cond == true && selected_id != null)
+                Rubric rub = new Rubric();
+                bool cond = true;
+                if (txtdetails.Text == "")
                 {
-   
-                    rub.Details = txtdetails.Text;
-                    rub.Id = Convert.ToInt32(selected_id);
-
-
-                    // updating Rubric in the database
-                    string cmd = string.Format("UPDATE Rubric SET Details='{0}' WHERE Id='{1}'", rub.Details,rub.Id);
-                   DataConnection.get_instance().Executequery(cmd);
-                   
-                    MessageBox.Show("Rubric Edited Successfully!");
-                    this.Hide();
-                    ViewRubric vs = new ViewRubric();
-                    vs.Show();
+                    //text boxes cannot contain empty spaces
+                    MessageBox.Show("Enter all the entries in their respective boxes");
+                    cond = false;
                 }
+                else
+                {
+                    if (cond == true && selected_id == null)
+                    {
+
+                        rub.Details = txtdetails.Text;
+                        rub.Cloid = Convert.ToInt32(selected_id_clo);
+
+                        // inserting the rubrics in the database
+                        string cmd = string.Format("INSERT Rubric(Details,Cloid) VALUES('{0}','{1}')", rub.Details, rub.Cloid);
+                        DataConnection.get_instance().Executequery(cmd);
+
+                        MessageBox.Show("Rubric Added Successfully");
+                        this.Hide();
+                        ViewRubric vc = new ViewRubric();
+                        vc.Show();
+
+                    }
+                    if (cond == true && selected_id != null)
+                    {
+
+                        rub.Details = txtdetails.Text;
+                        rub.Id = Convert.ToInt32(selected_id);
+
+
+                        // updating Rubric in the database
+                        string cmd = string.Format("UPDATE Rubric SET Details='{0}' WHERE Id='{1}'", rub.Details, rub.Id);
+                        DataConnection.get_instance().Executequery(cmd);
+
+                        MessageBox.Show("Rubric Edited Successfully!");
+                        this.Hide();
+                        ViewRubric vs = new ViewRubric();
+                        vs.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace ProjectB
 {
@@ -97,6 +99,42 @@ namespace ProjectB
             this.Hide();
             ViewRubric r = new ViewRubric();
             r.Show();
+        }
+
+        /// <summary>
+        /// shows attendance page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool flag = false;
+            SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM ClassAttendance"));
+            while (data.Read())
+            {
+                if (data[1].ToString() == DateTime.Now.Date.ToString())
+                {
+                    MessageBox.Show(" Attendence has already been taken today!");
+                    flag = true;
+                }
+
+            }
+            if (flag == false)
+            {
+
+                MarkAttendance m = new MarkAttendance();
+                this.Hide();
+                m.Show();
+
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ViewAttendance v = new ViewAttendance();
+            this.Hide();
+            v.Show();
         }
     }
 }

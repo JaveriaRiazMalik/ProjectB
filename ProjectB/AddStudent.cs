@@ -62,6 +62,7 @@ namespace ProjectB
         /// <param name="e"></param>
         private void btnRegisterS_Click_1(object sender, EventArgs e)
         {
+            try { 
             //reading data from the Student table from database
             SqlDataReader dataS = DataConnection.get_instance().Getdata("SELECT * FROM Student");
             List<Student> stdlist = new List<Student>();
@@ -171,36 +172,40 @@ namespace ProjectB
                 vs.Show();
 
             }
-            if (cond == true && selected_id != null) // It means Parameterised Constructor is called and user wants to Edit 
-            {
-
-                std.FirstName = txtSFname.Text;
-                std.LastName = txtSLname.Text;
-                std.Contact = txtScontact.Text;
-                std.Email = txtSemail.Text;
-                std.RegistrationNo = txtSRno.Text;
-
-                //reading data from the table Lookup
-                SqlDataReader status = DataConnection.get_instance().Getdata("SELECT * FROM Lookup");
-
-                while (status.Read())
+                if (cond == true && selected_id != null) // It means Parameterised Constructor is called and user wants to Edit 
                 {
-                    if (status[1].ToString() == txtSStatus.Text)
-                    {
-                        std.Status = Convert.ToInt32(status[0]);
-                        std.Statusid = status[1].ToString();
-                    }
-                }
-                //updating data from the Student table
-                string cmd = string.Format("UPDATE Student SET FirstName='{0}',LastName='{1}',Contact='{2}',Email='{3}',RegistrationNumber='{4}',Status='{5}' WHERE Id='{6}'", std.FirstName, std.LastName, std.Contact.ToString(), std.Email, std.RegistrationNo, std.Status,selected_id);
-                DataConnection.get_instance().Executequery(cmd);
-            
-                MessageBox.Show("Student Edited Successfully!");
-                this.Hide();
-                ViewStudent vs = new ViewStudent();
-                vs.Show();
-               
 
+                    std.FirstName = txtSFname.Text;
+                    std.LastName = txtSLname.Text;
+                    std.Contact = txtScontact.Text;
+                    std.Email = txtSemail.Text;
+                    std.RegistrationNo = txtSRno.Text;
+
+                    //reading data from the table Lookup
+                    SqlDataReader status = DataConnection.get_instance().Getdata("SELECT * FROM Lookup");
+
+                    while (status.Read())
+                    {
+                        if (status[1].ToString() == txtSStatus.Text)
+                        {
+                            std.Status = Convert.ToInt32(status[0]);
+                            std.Statusid = status[1].ToString();
+                        }
+                    }
+                    //updating data from the Student table
+                    string cmd = string.Format("UPDATE Student SET FirstName='{0}',LastName='{1}',Contact='{2}',Email='{3}',RegistrationNumber='{4}',Status='{5}' WHERE Id='{6}'", std.FirstName, std.LastName, std.Contact.ToString(), std.Email, std.RegistrationNo, std.Status, selected_id);
+                    DataConnection.get_instance().Executequery(cmd);
+
+                    MessageBox.Show("Student Edited Successfully!");
+                    this.Hide();
+                    ViewStudent vs = new ViewStudent();
+                    vs.Show();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

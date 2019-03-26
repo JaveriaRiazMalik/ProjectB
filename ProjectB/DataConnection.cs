@@ -46,6 +46,33 @@ namespace ProjectB
             return connection;
         }
 
+        public List<Student> ListofActivestudents(string commandText)
+        {
+            connection = Getconnection();
+            SqlCommand cmd = new SqlCommand(commandText, connection);
+            List<Student> student_list = new List<Student>();
+            var reader = Getdata(commandText);
+            while (reader.Read())
+            {
+                if (reader.GetInt32(6) == 5)
+                {
+                    Student student = new Student();
+                    student.Id = Convert.ToInt32(reader.GetValue(0));
+                    student.FirstName = reader.GetString(1);
+                    student.LastName = reader.GetString(2);
+                    student.Contact = reader.GetString(3);
+                    student.Email = reader.GetString(4);
+                    student.RegistrationNo = reader.GetString(5);
+                    if (reader.GetInt32(6) == 5)
+                    {
+                        student.Status = 5;
+                    }
+                    student_list.Add(student);
+                }
+
+            }
+            return student_list;
+        }
         /// <summary>
         /// Closes the connection
         /// </summary>
