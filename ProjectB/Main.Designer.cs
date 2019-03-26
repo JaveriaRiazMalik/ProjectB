@@ -40,13 +40,14 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -66,7 +67,7 @@
             this.btnMStudent.ForeColor = System.Drawing.Color.Transparent;
             this.btnMStudent.Location = new System.Drawing.Point(3, 3);
             this.btnMStudent.Name = "btnMStudent";
-            this.btnMStudent.Size = new System.Drawing.Size(191, 61);
+            this.btnMStudent.Size = new System.Drawing.Size(176, 61);
             this.btnMStudent.TabIndex = 2;
             this.btnMStudent.Text = "Students";
             this.btnMStudent.UseVisualStyleBackColor = false;
@@ -78,9 +79,9 @@
             this.btmMAttendance.Dock = System.Windows.Forms.DockStyle.Top;
             this.btmMAttendance.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btmMAttendance.ForeColor = System.Drawing.Color.Transparent;
-            this.btmMAttendance.Location = new System.Drawing.Point(397, 3);
+            this.btmMAttendance.Location = new System.Drawing.Point(185, 3);
             this.btmMAttendance.Name = "btmMAttendance";
-            this.btmMAttendance.Size = new System.Drawing.Size(191, 61);
+            this.btmMAttendance.Size = new System.Drawing.Size(178, 61);
             this.btmMAttendance.TabIndex = 2;
             this.btmMAttendance.Text = "CLOs";
             this.btmMAttendance.UseVisualStyleBackColor = false;
@@ -92,9 +93,9 @@
             this.btnMLabs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMLabs.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnMLabs.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMLabs.Location = new System.Drawing.Point(200, 3);
+            this.btnMLabs.Location = new System.Drawing.Point(369, 3);
             this.btnMLabs.Name = "btnMLabs";
-            this.btnMLabs.Size = new System.Drawing.Size(191, 61);
+            this.btnMLabs.Size = new System.Drawing.Size(172, 61);
             this.btnMLabs.TabIndex = 2;
             this.btnMLabs.Text = "Rubrics";
             this.btnMLabs.UseVisualStyleBackColor = false;
@@ -148,14 +149,14 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.16456F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.41772F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.65823F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.01266F));
             this.tableLayoutPanel2.Controls.Add(this.btnMStudent, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btmMAttendance, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnMLabs, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button3, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btmMAttendance, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 173);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -170,11 +171,11 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(594, 3);
+            this.button1.Location = new System.Drawing.Point(398, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 61);
+            this.button1.Size = new System.Drawing.Size(389, 61);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Attendance";
+            this.button1.Text = "Take Attendance";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -238,19 +239,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(796, 217);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Verdana", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(462, 45);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Javeria Riaz";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -266,6 +254,19 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(790, 85);
             this.tableLayoutPanel7.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Verdana", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(462, 45);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Javeria Riaz";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -307,6 +308,21 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Section C";
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.button2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(790, 67);
+            this.tableLayoutPanel6.TabIndex = 10;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
@@ -321,19 +337,19 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tableLayoutPanel6
+            // button3
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.button2, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(790, 67);
-            this.tableLayoutPanel6.TabIndex = 10;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Font = new System.Drawing.Font("Verdana", 21.75F);
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.Location = new System.Drawing.Point(547, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(240, 61);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Assessment";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Main
             // 
@@ -384,5 +400,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -211,5 +211,17 @@ namespace ProjectB
             m.Show();
             
         }
+
+        /// <summary>
+        /// showing assessments
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ViewAssessment s = new ViewAssessment();
+            this.Hide();
+            s.Show();
+        }
     }
 }

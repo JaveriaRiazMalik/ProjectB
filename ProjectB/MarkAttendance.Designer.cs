@@ -42,6 +42,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.viewattendance = new System.Windows.Forms.DataGridView();
             this.Mark = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -95,23 +96,24 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.btnRegisterS, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnView, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.button2, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.button3, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.btnRegisterS, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.button5, 0, 5);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(594, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 6;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.15599F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.87744F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.32033F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.43454F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.87744F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.44847F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowCount = 7;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.7166F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.48011F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.00712F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.95309F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.48011F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.04178F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.22006F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(284, 359);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
@@ -121,7 +123,7 @@
             this.btnRegisterS.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegisterS.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnRegisterS.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegisterS.Location = new System.Drawing.Point(3, 284);
+            this.btnRegisterS.Location = new System.Drawing.Point(3, 291);
             this.btnRegisterS.Name = "btnRegisterS";
             this.btnRegisterS.Size = new System.Drawing.Size(278, 48);
             this.btnRegisterS.TabIndex = 18;
@@ -147,9 +149,9 @@
             this.btnView.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnView.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.btnView.ForeColor = System.Drawing.Color.Transparent;
-            this.btnView.Location = new System.Drawing.Point(3, 60);
+            this.btnView.Location = new System.Drawing.Point(3, 51);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(278, 48);
+            this.btnView.Size = new System.Drawing.Size(278, 41);
             this.btnView.TabIndex = 14;
             this.btnView.Text = "Students";
             this.btnView.UseVisualStyleBackColor = false;
@@ -161,9 +163,9 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(3, 116);
+            this.button1.Location = new System.Drawing.Point(3, 98);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(278, 48);
+            this.button1.Size = new System.Drawing.Size(278, 39);
             this.button1.TabIndex = 15;
             this.button1.Text = "CLOs";
             this.button1.UseVisualStyleBackColor = false;
@@ -175,9 +177,9 @@
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(3, 170);
+            this.button2.Location = new System.Drawing.Point(3, 143);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(278, 48);
+            this.button2.Size = new System.Drawing.Size(278, 43);
             this.button2.TabIndex = 16;
             this.button2.Text = "Rubrics";
             this.button2.UseVisualStyleBackColor = false;
@@ -189,9 +191,9 @@
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.Font = new System.Drawing.Font("Verdana", 21.75F);
             this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(3, 228);
+            this.button3.Location = new System.Drawing.Point(3, 192);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(278, 48);
+            this.button3.Size = new System.Drawing.Size(278, 41);
             this.button3.TabIndex = 17;
             this.button3.Text = "Levels";
             this.button3.UseVisualStyleBackColor = false;
@@ -249,6 +251,20 @@
             this.Mark.Name = "Mark";
             this.Mark.ToolTipText = "Mark";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.Font = new System.Drawing.Font("Verdana", 21.75F);
+            this.button5.ForeColor = System.Drawing.Color.Transparent;
+            this.button5.Location = new System.Drawing.Point(3, 239);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(278, 46);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Assessments";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // MarkAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,5 +304,6 @@
         private System.Windows.Forms.Button btnRegisterS;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

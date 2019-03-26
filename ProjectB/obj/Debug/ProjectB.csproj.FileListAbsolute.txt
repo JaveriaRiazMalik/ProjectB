@@ -131,3 +131,5 @@ C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.csp
 C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.exe
 C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
 C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ViewAttendance.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.AddAssesment.resources
+C:\Users\Aleena Riaz\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ViewAssessment.resources

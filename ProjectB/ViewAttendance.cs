@@ -56,21 +56,78 @@ namespace ProjectB
 
         private void btnshow_Click(object sender, EventArgs e)
         {
-            int id;
-            SqlDataReader Attendence = DataConnection.get_instance().Getdata("SELECT * FROM ClassAttendance");
-            while (Attendence.Read())
+            try
             {
-                if (dateTimePicker1.Value.Date.ToString() == Attendence[1].ToString())
+                int id;
+                int ids;
+                List<ViewAttendanceList> list = new List<ViewAttendanceList>();
+                SqlDataReader Attendance = DataConnection.get_instance().Getdata("SELECT * FROM ClassAttendance");
+                while (Attendance.Read())
                 {
-                    id = Convert.ToInt32(Attendence[0]);
-                    
-                    SqlDataReader Attendancetoday = DataConnection.get_instance().Getdata(string.Format("SELECT FirstName,LastName,RegistrationNumber,AttendanceStatus,AttendanceId FROM StudentAttendance, Student WHERE AttendanceId='{0}'",id));
-                    BindingSource s = new BindingSource();
-                    s.DataSource = Attendancetoday;
-                    dataGridView1.DataSource = s;
+                    if (dateTimePicker1.Value.Date.ToString() == Attendance[1].ToString())
+                    {
+                        id = Convert.ToInt32(Attendance[0]);
 
+                        SqlDataReader Attendancetoday = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM StudentAttendance WHERE AttendanceId = '{0}'", id));
+                        while (Attendancetoday.Read())
+                        {
+                            ids = Convert.ToInt32(Attendancetoday[1]);
+
+                            SqlDataReader student = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Student WHERE Id = '{0}'", ids));
+                            while (student.Read())
+                            {
+
+                               if (ids.ToString() == student[0].ToString())
+                               {
+                                    ViewAttendanceList v = new ViewAttendanceList();
+                                    v.Firstname = student.GetString(1);
+                                    v.Lastname = student.GetString(2);
+                                    v.Regno = student.GetString(5);
+                                    v.Attendanceid = Convert.ToInt32(Attendancetoday.GetValue(0));
+                                    v.Attendancestatus = Convert.ToInt32(Attendancetoday.GetValue(2));
+                                    v.Studentid = Convert.ToInt32(Attendancetoday.GetValue(1));
+                                    if (v.Attendancestatus == 1)
+                                    {
+                                        v.Status = "Present";
+                                    }
+                                    else if (v.Attendancestatus == 2)
+                                    {
+                                        v.Status = "Absent";
+                                    }
+                                    else if (v.Attendancestatus == 3)
+                                    {
+                                        v.Status = "Leave";
+                                    }
+                                    else
+                                    {
+                                        v.Status = "Late";
+                                    }
+                                    list.Add(v);
+
+                               }
+
+                            }
+
+                        }
+
+                    }
                 }
+                BindingSource s = new BindingSource();
+                s.DataSource = list;
+                dataGridView1.DataSource = s;
+                dataGridView1.Columns.RemoveAt(6);
             }
+           catch (Exception ex)
+            {
+               MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddAssesment a = new AddAssesment();
+            this.Hide();
+            a.Show();
         }
     }
 }

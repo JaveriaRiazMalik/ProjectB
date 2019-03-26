@@ -182,5 +182,17 @@ namespace ProjectB
         {
 
         }
+
+        /// <summary>
+        /// showing assessments
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddAssesment a = new AddAssesment();
+            this.Hide();
+            a.Show();
+        }
     }
 }

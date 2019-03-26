@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAssesment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAssesment.Designer.cs">
+      <DependentUpon>AddAssesment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCLO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,7 @@
     <Compile Include="AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Assessment.cs" />
     <Compile Include="ClassAttendance.cs" />
     <Compile Include="CLO.cs" />
     <Compile Include="DataConnection.cs" />
@@ -91,12 +98,19 @@
     <Compile Include="RubricLevel.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentAttendance.cs" />
+    <Compile Include="ViewAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAssessment.Designer.cs">
+      <DependentUpon>ViewAssessment.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewAttendance.Designer.cs">
       <DependentUpon>ViewAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAttendanceList.cs" />
     <Compile Include="ViewCLOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +135,9 @@
     <Compile Include="ViewStudent.Designer.cs">
       <DependentUpon>ViewStudent.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAssesment.resx">
+      <DependentUpon>AddAssesment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCLO.resx">
       <DependentUpon>AddCLO.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +165,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewAssessment.resx">
+      <DependentUpon>ViewAssessment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewAttendance.resx">
       <DependentUpon>ViewAttendance.cs</DependentUpon>
     </EmbeddedResource>

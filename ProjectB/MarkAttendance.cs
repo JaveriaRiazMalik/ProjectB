@@ -151,5 +151,12 @@ namespace ProjectB
             Main m = new Main();
             m.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ViewAssessment v = new ViewAssessment();
+            this.Hide();
+            v.Show();
+        }
     }
 }
