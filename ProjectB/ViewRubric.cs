@@ -120,6 +120,22 @@ namespace ProjectB
                 string id = selected.Cells[4].Value.ToString();
                 MessageBox.Show("Are you sure you want to delete?");
 
+                SqlDataReader dataAs = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE RubricId={0}", id));
+                if (dataAs != null)
+                {
+                    while (dataAs.Read())
+                    {
+
+                        //deleting data from Rubric Level
+                        string cmd2 = string.Format("DELETE FROM AssessmentComponent WHERE RubricId='{0}'", id);
+                        DataConnection.get_instance().Executequery(cmd2);
+
+
+
+                    }
+
+                }
+
                 //read from Rubric Level
                 SqlDataReader dataR = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM RubricLevel WHERE Rubricid={0}",id));
                 if (dataR != null)
@@ -134,7 +150,7 @@ namespace ProjectB
                             string cmd2 = string.Format("DELETE FROM RubricLevel WHERE RubricId='{0}'", r);
                            DataConnection.get_instance().Executequery(cmd2);
                           
-                            MessageBox.Show("Related Rubric Level(s) Deleted");
+                            
 
                         }
                     }
@@ -142,7 +158,7 @@ namespace ProjectB
                 //delete from Rubric 
                 string cmd = string.Format("DELETE FROM Rubric WHERE Id='{0}'", id);
                  DataConnection.get_instance().Executequery(cmd);
-              
+                MessageBox.Show("Related Rubric Level(s) Deleted");
                 MessageBox.Show("Rubric Deleted");
 
                

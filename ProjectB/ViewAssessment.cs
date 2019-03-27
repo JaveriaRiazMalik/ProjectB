@@ -17,7 +17,12 @@ namespace ProjectB
         {
             InitializeComponent();
         }
-
+        
+        /// <summary>
+        /// showing Students
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnView_Click(object sender, EventArgs e)
         {
             AddStudent s = new AddStudent();
@@ -25,6 +30,11 @@ namespace ProjectB
             s.Show();
         }
 
+        /// <summary>
+        /// showing Clo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             AddCLO c = new AddCLO();
@@ -33,6 +43,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// Showing Main
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegisterS_Click(object sender, EventArgs e)
         {
             Main m = new Main();
@@ -46,7 +61,7 @@ namespace ProjectB
             if (e.ColumnIndex == 0)
             {
                 DataGridViewRow selected = view.Rows[e.RowIndex];
-                string id = selected.Cells[2].Value.ToString();
+                string id = selected.Cells[4].Value.ToString();
                 this.Hide();
                 AddAssesment fr = new AddAssesment(id);
                 fr.Show();
@@ -55,15 +70,51 @@ namespace ProjectB
             if (e.ColumnIndex == 1)
             {
                 DataGridViewRow selected = view.Rows[e.RowIndex];
-                string id = selected.Cells[2].Value.ToString();
+                string id = selected.Cells[4].Value.ToString();
                 MessageBox.Show("Are you sure you want to delete?");
+
+                SqlDataReader dataAs = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE RubricId={0}", id));
+                if (dataAs != null)
+                {
+                    while (dataAs.Read())
+                    {
+
+                        //deleting data from Rubric Level
+                        string cmd2 = string.Format("DELETE FROM AssessmentComponent WHERE RubricId='{0}'", id);
+                        DataConnection.get_instance().Executequery(cmd2);
+
+
+
+                    }
+
+                }
 
                 //deletes data from from Rubric Level
                 string cmd = string.Format("DELETE FROM Assessment WHERE Id='{0}'", id);
                 DataConnection.get_instance().Executequery(cmd);
 
-                MessageBox.Show("Assessment Deleted");
+                MessageBox.Show("Assessment and components Deleted");
                 ViewAssessment frm = new ViewAssessment();
+                this.Hide();
+                frm.Show();
+            }
+            //add assessment component
+            if (e.ColumnIndex == 2)
+            {
+
+                DataGridViewRow selected = view.Rows[e.RowIndex];
+                string id = selected.Cells[4].Value.ToString();
+                AddAssessmentComponent frm = new AddAssessmentComponent(id);
+                this.Hide();
+                frm.Show();
+            }
+            //view assessment component
+            if (e.ColumnIndex == 3)
+            {
+
+                DataGridViewRow selected = view.Rows[e.RowIndex];
+                string id = selected.Cells[4].Value.ToString();
+                ViewAssessmentCompnent frm = new ViewAssessmentCompnent(id);
                 this.Hide();
                 frm.Show();
             }
@@ -71,6 +122,7 @@ namespace ProjectB
 
         private void ViewAssessment_Load(object sender, EventArgs e)
         {
+            //reading from Assessment
             SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Assessment"));
             List<Assessment> list = new List<Assessment>();
             while (data.Read())
@@ -91,8 +143,14 @@ namespace ProjectB
             view.Columns["Edit"].DisplayIndex = view.ColumnCount - 1;
             view.Columns["Delete"].DisplayIndex = view.ColumnCount - 1;
             view.Columns["AssessmentComponent"].DisplayIndex = view.ColumnCount - 1;
+            view.Columns["ViewComponent"].DisplayIndex = view.ColumnCount - 1;
         }
 
+        /// <summary>
+        /// Showing Assessment Add
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             AddAssesment a = new AddAssesment();

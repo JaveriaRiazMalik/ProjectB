@@ -73,7 +73,7 @@ namespace ProjectB
                 }
                 else
                 {
-                    if (cond == true && idl == null)
+                    if (cond == true && idl == null) // for default constructor
                     {
 
                         rub.Details = txtdetails.Text;
@@ -81,19 +81,19 @@ namespace ProjectB
                         rub.RubricId1 = Convert.ToInt32(idr);
 
                         // inserting the rubric levels in the database
-                        string cmd = string.Format("INSERT RubricLevel(RubricId,Details,MeasurementLevel) VALUES('{0}','{1}',{2})", rub.RubricId1, rub.Details, rub.Mlevel1);
+                        string cmd = string.Format("INSERT RubricLevel(RubricId,Details,MeasurementLevel) VALUES('{0}','{1}','{2}')", rub.RubricId1, rub.Details, rub.Mlevel1);
                         DataConnection.get_instance().Executequery(cmd);
 
                         MessageBox.Show("Rubric Levels Added Successfully");
 
                         this.Hide();
-                        ViewLevel vl = new ViewLevel();
+                        ViewLevel vl = new ViewLevel(idr);
                         vl.Show();
 
 
 
                     }
-                    if (cond == true && idl != null)
+                    if (cond == true && idl != null)//for parametrized constructor
                     {
 
                         rub.Details = txtdetails.Text;
@@ -108,7 +108,7 @@ namespace ProjectB
 
                         MessageBox.Show("Rubric Level Edited Successfully!");
                         this.Hide();
-                        ViewLevel vs = new ViewLevel();
+                        ViewLevel vs = new ViewLevel(idr);
                         vs.Show();
                     }
                 }

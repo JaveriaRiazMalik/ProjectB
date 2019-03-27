@@ -13,12 +13,18 @@ namespace ProjectB
 {
     public partial class AddAssesment : Form
     {
+        //statis assessment id
         private string selected_id;
+
+        
         public AddAssesment()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// parametrized constructor
+        /// </summary>
         public AddAssesment(string id)
         {
             selected_id = id;
@@ -30,6 +36,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// showing Student list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnView_Click(object sender, EventArgs e)
         {
             ViewStudent v = new ViewStudent();
@@ -37,6 +48,11 @@ namespace ProjectB
             v.Show();
         }
 
+        /// <summary>
+        /// showing Clo list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             ViewCLOS v = new ViewCLOS();
@@ -44,6 +60,11 @@ namespace ProjectB
             v.Show();
         }
 
+        /// <summary>
+        /// showing Rubric list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             ViewRubric v = new ViewRubric();
@@ -51,6 +72,11 @@ namespace ProjectB
             v.Show();
         }
 
+        /// <summary>
+        /// showing Level list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             ViewLevel v = new ViewLevel();
@@ -58,10 +84,16 @@ namespace ProjectB
             v.Show();
         }
 
+        /// <summary>
+        /// Addind and editing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
            {
+                //reading data from assessment table
                 SqlDataReader data = DataConnection.get_instance().Getdata("SELECT * FROM Assessment");
                 List<Assessment> list = new List<Assessment>();
                 while (data.Read())
@@ -84,7 +116,7 @@ namespace ProjectB
                 }
                 else
                 {
-                    if (cond == true && selected_id == null)
+                    if (cond == true && selected_id == null) // It means Default Constructor is called and user wants to add the Assessment
                     {
                         assess.Title = txttitle.Text;
                         assess.Totalmarks = Convert.ToInt32(txttotalmarks.Text);
@@ -101,14 +133,14 @@ namespace ProjectB
                         vc.Show();
 
                     }
-                    if (cond == true && selected_id != null)
+                    if (cond == true && selected_id != null) // It means Parameterised Constructor is called and user wants to Edit 
                     {
                         assess.Title = txttitle.Text;
                         assess.Totalmarks = Convert.ToInt32(txttotalmarks.Text);
                         assess.Totalweightage = Convert.ToInt32(txttotalweightage.Text);
                         assess.Datecreated = DateTime.Now;
 
-                        //updating the values in the Clo table in the database
+                        //updating the values in the Assessment table in the database
                         string cmd = string.Format("UPDATE Assessment SET Title='{0}', DateCreated='{1}', TotalMarks='{2}', TotalWeightage='{3}' WHERE Id='{4}'", assess.Title, assess.Datecreated, assess.Totalmarks, assess.Totalweightage,selected_id);
                         DataConnection.get_instance().Executequery(cmd);
 
@@ -130,6 +162,7 @@ namespace ProjectB
         {
             if (selected_id != null)
             {
+                //reading data from Assessment table
                 SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Assessment"));
                 while (data.Read())
                 {
@@ -146,6 +179,11 @@ namespace ProjectB
             }
         }
 
+        /// <summary>
+        /// showing assessments
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             ViewAssessment v = new ViewAssessment();

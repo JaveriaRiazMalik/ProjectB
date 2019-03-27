@@ -144,7 +144,7 @@ namespace ProjectB
 
             }
 
-            if (cond == true && selected_id == null) // It means Default Constructor is called and user wants to add the employee
+            if (cond == true && selected_id == null) // It means Default Constructor is called and user wants to add the student
             {
                 std.FirstName = txtSFname.Text;
                 std.LastName = txtSLname.Text;

@@ -18,6 +18,11 @@ namespace ProjectB
             InitializeComponent();
         }
 
+        /// <summary>
+        /// showing Student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnView_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -25,6 +30,11 @@ namespace ProjectB
             s.Show();
         }
 
+        /// <summary>
+        /// showing Clo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -32,6 +42,11 @@ namespace ProjectB
             c.Show();
         }
 
+        /// <summary>
+        /// showing Rubric
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,6 +54,11 @@ namespace ProjectB
             r.Show();
         }
 
+        /// <summary>
+        /// showing level
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -47,6 +67,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// showing Main
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegisterS_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -54,13 +79,19 @@ namespace ProjectB
             m.Show();
         }
 
+        /// <summary>
+        /// adding attendance
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnshow_Click(object sender, EventArgs e)
         {
             try
             {
                 int id;
-                int ids;
-                List<ViewAttendanceList> list = new List<ViewAttendanceList>();
+                bool flag = false;
+
+                //reading data from ClassAttendance
                 SqlDataReader Attendance = DataConnection.get_instance().Getdata("SELECT * FROM ClassAttendance");
                 while (Attendance.Read())
                 {
@@ -68,61 +99,66 @@ namespace ProjectB
                     {
                         id = Convert.ToInt32(Attendance[0]);
 
-                        SqlDataReader Attendancetoday = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM StudentAttendance WHERE AttendanceId = '{0}'", id));
-                        while (Attendancetoday.Read())
+                        //applying JOIN on StudentAttendace and Student
+                        SqlDataReader Attendancetoday = DataConnection.get_instance().Getdata(string.Format("SELECT FirstName,LastName,RegistrationNumber,AttendanceStatus,AttendanceId FROM StudentAttendance S JOIN Student D ON S.StudentId = D.Id WHERE S.AttendanceId='{0}'",id));
+
+
+                        BindingSource s = new BindingSource();
+                        s.DataSource =Attendancetoday ;
+                        dataGridView1.DataSource = s;
+                       
+
+                        
+                        foreach(DataGridViewRow dg in dataGridView1.Rows )
                         {
-                            ids = Convert.ToInt32(Attendancetoday[1]);
-
-                            SqlDataReader student = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Student WHERE Id = '{0}'", ids));
-                            while (student.Read())
+                            if(dg.Cells[4].FormattedValue.ToString() == "1")
                             {
-
-                               if (ids.ToString() == student[0].ToString())
-                               {
-                                    ViewAttendanceList v = new ViewAttendanceList();
-                                    v.Firstname = student.GetString(1);
-                                    v.Lastname = student.GetString(2);
-                                    v.Regno = student.GetString(5);
-                                    v.Attendanceid = Convert.ToInt32(Attendancetoday.GetValue(0));
-                                    v.Attendancestatus = Convert.ToInt32(Attendancetoday.GetValue(2));
-                                    v.Studentid = Convert.ToInt32(Attendancetoday.GetValue(1));
-                                    if (v.Attendancestatus == 1)
-                                    {
-                                        v.Status = "Present";
-                                    }
-                                    else if (v.Attendancestatus == 2)
-                                    {
-                                        v.Status = "Absent";
-                                    }
-                                    else if (v.Attendancestatus == 3)
-                                    {
-                                        v.Status = "Leave";
-                                    }
-                                    else
-                                    {
-                                        v.Status = "Late";
-                                    }
-                                    list.Add(v);
-
-                               }
-
+                                dg.Cells[0].Value = "Present";
                             }
-
+                            else if (dg.Cells[4].FormattedValue.ToString() == "2")
+                            {
+                                dg.Cells[0].Value = "Absent";
+                            }
+                            else if (dg.Cells[4].FormattedValue.ToString() == "3")
+                            {
+                                dg.Cells[0].Value = "Leave";
+                            }
+                            else
+                            {
+                                dg.Cells[0].Value = "Late";
+                            }
                         }
+                        dataGridView1.Columns.RemoveAt(5);
+                        dataGridView1.Columns.RemoveAt(4);
+                        
 
                     }
+                    else
+                    {
+                        flag = true;
+
+                    }
+
                 }
-                BindingSource s = new BindingSource();
-                s.DataSource = list;
-                dataGridView1.DataSource = s;
-                dataGridView1.Columns.RemoveAt(6);
+                if(flag)
+                {
+                    MessageBox.Show("No attendance has been marked on this day");
+                }
+
             }
+
+                 
            catch (Exception ex)
             {
                MessageBox.Show(ex.Message);
             }
         }
 
+        /// <summary>
+        /// showing Assessment Add
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             AddAssesment a = new AddAssesment();

@@ -80,9 +80,24 @@ namespace ProjectB
                     {
                         
                         ru = Convert.ToInt32(data.GetValue(0));
-                       
-                            //reading data from Rubric Levels table
-                            SqlDataReader dataR = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM RubricLevel WHERE RubricId={0}",ru));
+
+                        SqlDataReader dataAs = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE RubricId={0}", ru));
+                        if (dataAs != null)
+                        {
+                            while (dataAs.Read())
+                            {
+
+                                //deleting data from Rubric Level
+                                string cmd2 = string.Format("DELETE FROM AssessmentComponent WHERE RubricId='{0}'", ru);
+                                DataConnection.get_instance().Executequery(cmd2);
+                               
+
+
+                            }
+
+                        }
+                        //reading data from Rubric Levels table
+                        SqlDataReader dataR = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM RubricLevel WHERE RubricId={0}",ru));
                             if (dataR != null)
                             {
                                 while (dataR.Read())
@@ -91,7 +106,7 @@ namespace ProjectB
                                     //deleting data from Rubric Level
                                         string cmd2 = string.Format("DELETE FROM RubricLevel WHERE RubricId='{0}'", ru);
                                        DataConnection.get_instance().Executequery(cmd2);
-                                       MessageBox.Show("Related Rubric Level(s) Deleted");
+                                       
 
                                     
                                 }
@@ -100,7 +115,7 @@ namespace ProjectB
                             //deleting data from Rubric
                             string cmd1 = string.Format("DELETE FROM Rubric WHERE Id='{0}'", ru);
                             DataConnection.get_instance().Executequery(cmd1);
-                            MessageBox.Show("Related Rubric(s) Deleted");
+                           
                         
                     }
                 }
@@ -108,9 +123,10 @@ namespace ProjectB
                 //deleting data from Clo
                 string cmd = string.Format("DELETE FROM Clo WHERE Id='{0}'",id);
                 DataConnection.get_instance().Executequery(cmd);
-                MessageBox.Show("Clo Deleted");
+                MessageBox.Show("Clo, Rubric and  Rubric Level(s) Deleted");
+                MessageBox.Show("Related Assessments Deleted");
 
-               
+
                 ViewCLOS frm = new ViewCLOS();
                 this.Hide();
                 frm.Show();

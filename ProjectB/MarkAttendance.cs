@@ -19,6 +19,11 @@ namespace ProjectB
             InitializeComponent();
         }
 
+        /// <summary>
+        /// showing student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnView_Click(object sender, EventArgs e)
         {
             ViewStudent s = new ViewStudent();
@@ -26,6 +31,11 @@ namespace ProjectB
             s.Show();
         }
 
+        /// <summary>
+        /// showing clos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             ViewCLOS s = new ViewCLOS();
@@ -33,6 +43,11 @@ namespace ProjectB
             s.Show();
         }
 
+        /// <summary>
+        /// showing rubrics
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             ViewRubric r = new ViewRubric();
@@ -40,6 +55,11 @@ namespace ProjectB
             r.Show();
         }
 
+        /// <summary>
+        /// showing Level
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             ViewLevel l = new ViewLevel();
@@ -56,6 +76,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// Form Load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MarkAttendance_Load(object sender, EventArgs e)
         {
             SqlDataReader dataS = DataConnection.get_instance().Getdata("SELECT * FROM Student");
@@ -84,29 +109,37 @@ namespace ProjectB
             viewattendance.Columns["Mark"].DisplayIndex = viewattendance.ColumnCount - 1;
         }
 
+        /// <summary>
+        /// showing attendance
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             try
             {
                 DateTime d = DateTime.Now.Date;
+                // inserting into ClassAttendance table
                 string cmd = string.Format("INSERT ClassAttendance(AttendanceDate) VALUES('{0}')", d);
                 DataConnection.get_instance().Executequery(cmd);
 
                 for (int n = 0; n < viewattendance.RowCount - 1; n++)
                 {
-
+                    //reading from Student table
                     SqlDataReader std = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Student"));
                     while (std.Read())
                     {
 
-                        string attstatus = viewattendance.Rows[n].Cells[0].Value.ToString();
-                        string stdid = viewattendance.Rows[n].Cells[1].Value.ToString();
+                        string attstatus = viewattendance.Rows[n].Cells[0].Value.ToString(); //selecting attendance status
+                        string stdid = viewattendance.Rows[n].Cells[1].Value.ToString(); //selecting student id
 
                         if (std[0].ToString() == stdid)
                         {
+                            //reading from ClassAttendance table
                             SqlDataReader clsdate = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM ClassAttendance"));
                             while (clsdate.Read())
                             {
+                                //reading from lookup table
                                 SqlDataReader status = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Lookup"));
                                 if (clsdate[1].ToString() == d.ToString())
                                 {
@@ -119,6 +152,7 @@ namespace ProjectB
                                             stdatt.Attendancestatus = Convert.ToInt32(status[0]);
                                             stdatt.Studentid = Convert.ToInt32(std[0]);
 
+                                            //inseting in StudentAttendance
                                             string cmd2 = string.Format("INSERT StudentAttendance(AttendanceId,StudentId,AttendanceStatus) VALUES('{0}','{1}','{2}')", stdatt.Attendanceid, stdatt.Studentid, stdatt.Attendancestatus);
                                             DataConnection.get_instance().Executequery(cmd2);
                                            
@@ -145,6 +179,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// showing main screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegisterS_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -152,6 +191,11 @@ namespace ProjectB
             m.Show();
         }
 
+        /// <summary>
+        /// showing View Assessment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             ViewAssessment v = new ViewAssessment();

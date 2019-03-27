@@ -52,6 +52,12 @@
     <Compile Include="AddAssesment.Designer.cs">
       <DependentUpon>AddAssesment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddAssessmentComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAssessmentComponent.Designer.cs">
+      <DependentUpon>AddAssessmentComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCLO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,7 @@
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Assessment.cs" />
+    <Compile Include="AssessmentComponent.cs" />
     <Compile Include="ClassAttendance.cs" />
     <Compile Include="CLO.cs" />
     <Compile Include="DataConnection.cs" />
@@ -104,13 +111,18 @@
     <Compile Include="ViewAssessment.Designer.cs">
       <DependentUpon>ViewAssessment.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAssessmentCompnent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentCompnent.Designer.cs">
+      <DependentUpon>ViewAssessmentCompnent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewAttendance.Designer.cs">
       <DependentUpon>ViewAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewAttendanceList.cs" />
     <Compile Include="ViewCLOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="AddAssesment.resx">
       <DependentUpon>AddAssesment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAssessmentComponent.resx">
+      <DependentUpon>AddAssessmentComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddCLO.resx">
       <DependentUpon>AddCLO.cs</DependentUpon>
@@ -167,6 +182,9 @@
     </Compile>
     <EmbeddedResource Include="ViewAssessment.resx">
       <DependentUpon>ViewAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAssessmentCompnent.resx">
+      <DependentUpon>ViewAssessmentCompnent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewAttendance.resx">
       <DependentUpon>ViewAttendance.cs</DependentUpon>

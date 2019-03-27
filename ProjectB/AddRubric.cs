@@ -55,17 +55,14 @@ namespace ProjectB
             if (selected_id != null)
             {
                 // reading data from the database from Rubric
-                SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Rubric"));
+                SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Rubric WHERE Id='{0}'",selected_id));
                 while (data.Read())
                 {
-                    Rubric r = new Rubric();
-                    r.Id = Convert.ToInt32(data.GetValue(0));
-                    if (r.Id == Convert.ToInt32(selected_id))
-                    {
-                         txtdetails.Text = r.Details;
+                    
+                         txtdetails.Text = data.GetString(1).ToString();
                        
-                    }
-                    }
+                  
+                }
             }
         }
 
@@ -102,7 +99,7 @@ namespace ProjectB
                 }
                 else
                 {
-                    if (cond == true && selected_id == null)
+                    if (cond == true && selected_id == null) //for default constructor
                     {
 
                         rub.Details = txtdetails.Text;
@@ -114,11 +111,11 @@ namespace ProjectB
 
                         MessageBox.Show("Rubric Added Successfully");
                         this.Hide();
-                        ViewRubric vc = new ViewRubric();
+                        ViewRubric vc = new ViewRubric(selected_id_clo);
                         vc.Show();
 
                     }
-                    if (cond == true && selected_id != null)
+                    if (cond == true && selected_id != null) //for parametrized constructor
                     {
 
                         rub.Details = txtdetails.Text;
@@ -131,7 +128,7 @@ namespace ProjectB
 
                         MessageBox.Show("Rubric Edited Successfully!");
                         this.Hide();
-                        ViewRubric vs = new ViewRubric();
+                        ViewRubric vs = new ViewRubric(selected_id_clo);
                         vs.Show();
                     }
                 }

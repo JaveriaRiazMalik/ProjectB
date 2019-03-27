@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjectB
 {
+    /// <summary>
+    /// class of assessment table
+    /// </summary>
     class Assessment
     {
-        private int id;
+        private int id; //primary key
         private string title;
         private DateTime datecreated;
         private int totalmarks;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjectB
 {
+    /// <summary>
+    /// class of ClassAttendance
+    /// </summary>
     class ClassAttendance
     {
         private int id;
