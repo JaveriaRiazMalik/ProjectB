@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17AB5BA5-5708-4763-B730-119B7C719880}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjectB</RootNamespace>
+    <AssemblyName>ProjectB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddAssesment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAssesment.Designer.cs">
+      <DependentUpon>AddAssesment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAssessmentComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAssessmentComponent.Designer.cs">
+      <DependentUpon>AddAssessmentComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCLO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCLO.Designer.cs">
+      <DependentUpon>AddCLO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLevel.Designer.cs">
+      <DependentUpon>AddLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRubric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRubric.Designer.cs">
+      <DependentUpon>AddRubric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllStudentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllStudentsList.Designer.cs">
+      <DependentUpon>AllStudentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment.cs" />
+    <Compile Include="AssessmentComponent.cs" />
+    <Compile Include="ClassAttendance.cs" />
+    <Compile Include="CLO.cs" />
+    <Compile Include="DataConnection.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarkAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarkAttendance.Designer.cs">
+      <DependentUpon>MarkAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rubric.cs" />
+    <Compile Include="RubricLevel.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentAttendance.cs" />
+    <Compile Include="StudentResult.cs" />
+    <Compile Include="ViewAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAssessment.Designer.cs">
+      <DependentUpon>ViewAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentCompnent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentCompnent.Designer.cs">
+      <DependentUpon>ViewAssessmentCompnent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAttendance.Designer.cs">
+      <DependentUpon>ViewAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCLOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCLOS.Designer.cs">
+      <DependentUpon>ViewCLOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLevel.Designer.cs">
+      <DependentUpon>ViewLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewRubric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewRubric.Designer.cs">
+      <DependentUpon>ViewRubric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStudent.Designer.cs">
+      <DependentUpon>ViewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewStudentResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStudentResult.Designer.cs">
+      <DependentUpon>ViewStudentResult.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddAssesment.resx">
+      <DependentUpon>AddAssesment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAssessmentComponent.resx">
+      <DependentUpon>AddAssessmentComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCLO.resx">
+      <DependentUpon>AddCLO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLevel.resx">
+      <DependentUpon>AddLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRubric.resx">
+      <DependentUpon>AddRubric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllStudentsList.resx">
+      <DependentUpon>AllStudentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarkAttendance.resx">
+      <DependentUpon>MarkAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ViewAssessment.resx">
+      <DependentUpon>ViewAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAssessmentCompnent.resx">
+      <DependentUpon>ViewAssessmentCompnent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAttendance.resx">
+      <DependentUpon>ViewAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCLOS.resx">
+      <DependentUpon>ViewCLOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLevel.resx">
+      <DependentUpon>ViewLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewRubric.resx">
+      <DependentUpon>ViewRubric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewStudent.resx">
+      <DependentUpon>ViewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewStudentResult.resx">
+      <DependentUpon>ViewStudentResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
