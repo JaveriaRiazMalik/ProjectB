@@ -179,7 +179,7 @@ namespace ProjectB
                         MessageBox.Show("Assessment Component Added Successfully");
 
                         this.Hide();
-                        ViewAssessmentCompnent vl = new ViewAssessmentCompnent(selected_id_ac);
+                        ViewAssessmentCompnent vl = new ViewAssessmentCompnent(ac.Assessmentid.ToString());
                         vl.Show();
 
 
@@ -210,7 +210,7 @@ namespace ProjectB
 
                         MessageBox.Show("Assessment Component edited successfully");
                         this.Hide();
-                        ViewAssessmentCompnent m = new ViewAssessmentCompnent(selected_id_ac);
+                        ViewAssessmentCompnent m = new ViewAssessmentCompnent(ac.Assessmentid.ToString());
                         m.Show();
                     }
                 }

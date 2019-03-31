@@ -232,6 +232,7 @@
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "ViewCLOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewCLOS";
             this.Load += new System.EventHandler(this.ViewCLOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewclo)).EndInit();

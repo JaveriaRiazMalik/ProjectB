@@ -35,11 +35,11 @@
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRegisterS = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnView = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnRegisterS = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.view)).BeginInit();
@@ -136,6 +136,20 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(315, 359);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
+            // btnRegisterS
+            // 
+            this.btnRegisterS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
+            this.btnRegisterS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegisterS.Font = new System.Drawing.Font("Verdana", 21.75F);
+            this.btnRegisterS.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRegisterS.Location = new System.Drawing.Point(3, 287);
+            this.btnRegisterS.Name = "btnRegisterS";
+            this.btnRegisterS.Size = new System.Drawing.Size(309, 48);
+            this.btnRegisterS.TabIndex = 21;
+            this.btnRegisterS.Text = "Main Page";
+            this.btnRegisterS.UseVisualStyleBackColor = false;
+            this.btnRegisterS.Click += new System.EventHandler(this.btnRegisterS_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -190,20 +204,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnRegisterS
-            // 
-            this.btnRegisterS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(152)))), ((int)(((byte)(220)))));
-            this.btnRegisterS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegisterS.Font = new System.Drawing.Font("Verdana", 21.75F);
-            this.btnRegisterS.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegisterS.Location = new System.Drawing.Point(3, 287);
-            this.btnRegisterS.Name = "btnRegisterS";
-            this.btnRegisterS.Size = new System.Drawing.Size(309, 48);
-            this.btnRegisterS.TabIndex = 21;
-            this.btnRegisterS.Text = "Main Page";
-            this.btnRegisterS.UseVisualStyleBackColor = false;
-            this.btnRegisterS.Click += new System.EventHandler(this.btnRegisterS_Click);
-            // 
             // ViewAssessmentCompnent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +213,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ViewAssessmentCompnent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewAssessmentCompnent";
             this.Load += new System.EventHandler(this.ViewAssessmentCompnent_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

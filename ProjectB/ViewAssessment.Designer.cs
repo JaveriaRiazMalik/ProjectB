@@ -32,16 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.view = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AssessmentComponent = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ViewComponent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnView = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnRegisterS = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AssessmentComponent = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ViewComponent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.view)).BeginInit();
@@ -87,6 +87,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(881, 365);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -104,6 +105,35 @@
             this.view.Size = new System.Drawing.Size(577, 359);
             this.view.TabIndex = 1;
             this.view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_CellContentClick);
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // AssessmentComponent
+            // 
+            this.AssessmentComponent.HeaderText = "AddComponent";
+            this.AssessmentComponent.Name = "AssessmentComponent";
+            this.AssessmentComponent.Text = "AddComponent";
+            this.AssessmentComponent.UseColumnTextForButtonValue = true;
+            // 
+            // ViewComponent
+            // 
+            this.ViewComponent.HeaderText = "ViewComponent";
+            this.ViewComponent.Name = "ViewComponent";
+            this.ViewComponent.Text = "ViewComponent";
+            this.ViewComponent.ToolTipText = "ViewComponent";
+            this.ViewComponent.UseColumnTextForButtonValue = true;
             // 
             // tableLayoutPanel3
             // 
@@ -193,35 +223,6 @@
             this.button2.Text = "Assessments";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // AssessmentComponent
-            // 
-            this.AssessmentComponent.HeaderText = "AddComponent";
-            this.AssessmentComponent.Name = "AssessmentComponent";
-            this.AssessmentComponent.Text = "AddComponent";
-            this.AssessmentComponent.UseColumnTextForButtonValue = true;
-            // 
-            // ViewComponent
-            // 
-            this.ViewComponent.HeaderText = "ViewComponent";
-            this.ViewComponent.Name = "ViewComponent";
-            this.ViewComponent.Text = "ViewComponent";
-            this.ViewComponent.ToolTipText = "ViewComponent";
-            this.ViewComponent.UseColumnTextForButtonValue = true;
             // 
             // ViewAssessment
             // 

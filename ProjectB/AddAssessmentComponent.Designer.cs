@@ -294,6 +294,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddAssessmentComponent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddAssessmentComponent";
             this.Load += new System.EventHandler(this.AddAssessmentComponent_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

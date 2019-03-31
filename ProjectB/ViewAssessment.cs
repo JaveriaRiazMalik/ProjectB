@@ -69,18 +69,32 @@ namespace ProjectB
             //delete button
             if (e.ColumnIndex == 1)
             {
+                int ac;
                 DataGridViewRow selected = view.Rows[e.RowIndex];
                 string id = selected.Cells[4].Value.ToString();
                 MessageBox.Show("Are you sure you want to delete?");
 
-                SqlDataReader dataAs = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE RubricId={0}", id));
+                SqlDataReader dataAs = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE AssessmentId={0}", id));
                 if (dataAs != null)
                 {
                     while (dataAs.Read())
                     {
+                        ac = Convert.ToInt32(dataAs.GetValue(0));
+                        SqlDataReader dataSR = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM StudentResult WHERE AssessmentComponentId={0}", ac));
+                        if (dataSR != null)
+                        {
+                            while (dataSR.Read())
+                            {
 
+                                //deleting data from Student Result
+                                string cmd3 = string.Format("DELETE FROM StudentResult WHERE AssessmentComponentId='{0}'", ac);
+                                DataConnection.get_instance().Executequery(cmd3);
+
+                            }
+
+                        }
                         //deleting data from Rubric Level
-                        string cmd2 = string.Format("DELETE FROM AssessmentComponent WHERE RubricId='{0}'", id);
+                        string cmd2 = string.Format("DELETE FROM AssessmentComponent WHERE AssessmentId='{0}'", id);
                         DataConnection.get_instance().Executequery(cmd2);
 
 
@@ -93,6 +107,7 @@ namespace ProjectB
                 string cmd = string.Format("DELETE FROM Assessment WHERE Id='{0}'", id);
                 DataConnection.get_instance().Executequery(cmd);
 
+                MessageBox.Show("Related Student Results Deleted");
                 MessageBox.Show("Assessment and components Deleted");
                 ViewAssessment frm = new ViewAssessment();
                 this.Hide();

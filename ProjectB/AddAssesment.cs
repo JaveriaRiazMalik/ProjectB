@@ -190,5 +190,25 @@ namespace ProjectB
             this.Show();
             v.Hide();
         }
+
+        /// <summary>
+        /// showing main screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Main m = new Main();
+            this.Hide();
+            m.Show();
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            ViewAssessment v = new ViewAssessment();
+            this.Hide();
+            v.Show();
+        }
     }
 }

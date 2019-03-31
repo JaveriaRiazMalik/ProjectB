@@ -13,7 +13,7 @@ namespace ProjectB
 {
     public partial class ViewAssessmentCompnent : Form
     {
-        string selected;
+        string selected; //assessment id
         public ViewAssessmentCompnent()
         {
             InitializeComponent();
@@ -100,8 +100,8 @@ namespace ProjectB
                     a.Name = data.GetString(1);
                     a.Datecreated = data.GetDateTime(4);
                     a.Dateupdated = data.GetDateTime(5);
-
-                    list.Add(a);
+                    if (a.Assessmentid.ToString() == selected)
+                    { list.Add(a); }
 
                 }
                 BindingSource S = new BindingSource();
@@ -134,9 +134,14 @@ namespace ProjectB
                 MessageBox.Show("Are you sure you want to delete?");
 
                 //deletes data from from Assessment Component
+                string cmd1 = string.Format("DELETE FROM StudentResult WHERE AssessmentComponentId='{0}'", id);
+                DataConnection.get_instance().Executequery(cmd1);
+
+                //deletes data from from Assessment Component
                 string cmd = string.Format("DELETE FROM AssessmentComponent WHERE Id='{0}'", id);
                 DataConnection.get_instance().Executequery(cmd);
 
+                MessageBox.Show("Related Student Results Deleted");
                 MessageBox.Show("Assessment Component Deleted");
                 ViewAssessmentCompnent frm = new ViewAssessmentCompnent(id);
                 this.Hide();

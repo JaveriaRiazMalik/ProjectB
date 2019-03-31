@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -99,12 +102,30 @@
     <Compile Include="MarkAttendance.Designer.cs">
       <DependentUpon>MarkAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="PDFReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDFReports.Designer.cs">
+      <DependentUpon>PDFReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rubric.cs" />
     <Compile Include="RubricLevel.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentAttendance.cs" />
+    <Compile Include="StudentResult.cs" />
+    <Compile Include="StudentsResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentsResultView.Designer.cs">
+      <DependentUpon>StudentsResultView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewAssessment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +168,12 @@
     <Compile Include="ViewStudent.Designer.cs">
       <DependentUpon>ViewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewStudentResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStudentResult.Designer.cs">
+      <DependentUpon>ViewStudentResult.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddAssesment.resx">
       <DependentUpon>AddAssesment.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +198,9 @@
     <EmbeddedResource Include="MarkAttendance.resx">
       <DependentUpon>MarkAttendance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PDFReports.resx">
+      <DependentUpon>PDFReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -180,6 +210,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentsResultView.resx">
+      <DependentUpon>StudentsResultView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewAssessment.resx">
       <DependentUpon>ViewAssessment.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +234,21 @@
     <EmbeddedResource Include="ViewStudent.resx">
       <DependentUpon>ViewStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewStudentResult.resx">
+      <DependentUpon>ViewStudentResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="ProjectBDataSet.xsc">
+      <DependentUpon>ProjectBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet.xss">
+      <DependentUpon>ProjectBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -118,6 +118,10 @@ namespace ProjectB
                 MessageBox.Show("Are you sure you want to delete?");
 
                 //deletes data from from Rubric Level
+                string cmd1 = string.Format("DELETE FROM StudentResult WHERE RubricMeasurementId='{0}'", id);
+                DataConnection.get_instance().Executequery(cmd1);
+
+                //deletes data from from Rubric Level
                 string cmd = string.Format("DELETE FROM RubricLevel WHERE Id='{0}'", id);
                DataConnection.get_instance().Executequery(cmd);
                

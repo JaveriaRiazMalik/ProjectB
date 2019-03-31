@@ -11,7 +11,7 @@ namespace ProjectB
     /// </summary>
     class AssessmentComponent
     {
-        private int id;
+        private int id; //primary key
         private int rubricid;
         private int assessmentid;
         private int totalmarks;

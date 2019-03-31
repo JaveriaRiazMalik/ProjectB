@@ -11,7 +11,7 @@ namespace ProjectB
     /// </summary>
     class ClassAttendance
     {
-        private int id;
+        private int id; //primary key
         private DateTime attendancedate;
 
         public int Id { get => id; set => id = value; }

@@ -154,5 +154,17 @@ namespace ProjectB
             s.Show();
 
         }
+
+        /// <summary>
+        /// showing main screens
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            StudentsResultView s = new StudentsResultView();
+            this.Hide();
+            s.Show();
+        }
     }
 }

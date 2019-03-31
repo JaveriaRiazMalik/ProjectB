@@ -72,6 +72,7 @@ namespace ProjectB
                 int id = Convert.ToInt32(selected.Cells[4].Value);
                 MessageBox.Show("Are you sure you want to delete?");
                 int ru;
+                int ac;
                 //reading data from Rubric table
                 SqlDataReader data = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM Rubric WHERE CloId={0}",id));
                 if (data != null)
@@ -86,8 +87,21 @@ namespace ProjectB
                         {
                             while (dataAs.Read())
                             {
+                                ac = Convert.ToInt32(dataAs.GetValue(0));
+                                SqlDataReader dataSR = DataConnection.get_instance().Getdata(string.Format("SELECT * FROM StudentResult WHERE AssessmentComponentId={0}", ac));
+                                if (dataSR != null)
+                                {
+                                    while (dataSR.Read())
+                                    {
+                                        
+                                        //deleting data from Student Result
+                                        string cmd3 = string.Format("DELETE FROM StudentResult WHERE AssessmentComponentId='{0}'", ac);
+                                        DataConnection.get_instance().Executequery(cmd3);
 
-                                //deleting data from Rubric Level
+                                    }
+
+                                }
+                                //deleting data from Assessment Component
                                 string cmd2 = string.Format("DELETE FROM AssessmentComponent WHERE RubricId='{0}'", ru);
                                 DataConnection.get_instance().Executequery(cmd2);
                                
@@ -123,8 +137,10 @@ namespace ProjectB
                 //deleting data from Clo
                 string cmd = string.Format("DELETE FROM Clo WHERE Id='{0}'",id);
                 DataConnection.get_instance().Executequery(cmd);
-                MessageBox.Show("Clo, Rubric and  Rubric Level(s) Deleted");
+                MessageBox.Show("Related Student Results Deleted");
                 MessageBox.Show("Related Assessments Deleted");
+                MessageBox.Show("Clo, Rubrics and  Rubric Levels Deleted");
+                
 
 
                 ViewCLOS frm = new ViewCLOS();
