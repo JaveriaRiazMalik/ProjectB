@@ -100,18 +100,18 @@ namespace ProjectB
                         id = Convert.ToInt32(Attendance[0]);
 
                         //applying JOIN on StudentAttendace and Student
-                        SqlDataReader Attendancetoday = DataConnection.get_instance().Getdata(string.Format("SELECT FirstName,LastName,RegistrationNumber,AttendanceStatus,AttendanceId FROM StudentAttendance S JOIN Student D ON S.StudentId = D.Id WHERE S.AttendanceId='{0}'",id));
+                        SqlDataReader Attendancetoday = DataConnection.get_instance().Getdata(string.Format("SELECT FirstName,LastName,RegistrationNumber,AttendanceStatus,AttendanceId FROM StudentAttendance S JOIN Student D ON S.StudentId = D.Id WHERE S.AttendanceId='{0}'", id));
 
 
                         BindingSource s = new BindingSource();
-                        s.DataSource =Attendancetoday ;
+                        s.DataSource = Attendancetoday;
                         dataGridView1.DataSource = s;
-                       
 
-                        
-                        foreach(DataGridViewRow dg in dataGridView1.Rows )
+
+
+                        foreach (DataGridViewRow dg in dataGridView1.Rows)
                         {
-                            if(dg.Cells[4].FormattedValue.ToString() == "1")
+                            if (dg.Cells[4].FormattedValue.ToString() == "1")
                             {
                                 dg.Cells[0].Value = "Present";
                             }
@@ -130,7 +130,7 @@ namespace ProjectB
                         }
                         dataGridView1.Columns.RemoveAt(5);
                         dataGridView1.Columns.RemoveAt(4);
-                        
+
 
                     }
                     else
@@ -140,15 +140,16 @@ namespace ProjectB
                     }
 
                 }
-                if(flag)
+                if (flag)
                 {
                     MessageBox.Show("No attendance has been marked on this day");
                 }
 
+
             }
 
-                 
-           catch (Exception ex)
+
+            catch (Exception ex)
             {
                MessageBox.Show(ex.Message);
             }

@@ -172,6 +172,7 @@ namespace ProjectB
                 //delete from Rubric 
                 string cmd = string.Format("DELETE FROM Rubric WHERE Id='{0}'", id);
                  DataConnection.get_instance().Executequery(cmd);
+                MessageBox.Show("Related Results Deleted");
                 MessageBox.Show("Related Rubric Level(s) Deleted");
                 MessageBox.Show("Rubric Deleted");
 
